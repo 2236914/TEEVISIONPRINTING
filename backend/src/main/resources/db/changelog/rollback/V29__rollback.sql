@@ -1,0 +1,7 @@
+ALTER TABLE products 
+DROP CONSTRAINT IF EXISTS fk_product_fit;
+
+ALTER TABLE products 
+DROP COLUMN IF EXISTS fit_id;
+
+DROP TABLE IF EXISTS fits;

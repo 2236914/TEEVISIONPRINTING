@@ -1,0 +1,50 @@
+.resize-handle {
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: white;
+  position: absolute;
+}
+
+.resize-handle.left {
+  top: 50%;
+  left: -4px;
+  transform: translateY(-50%);
+}
+
+.resize-handle.right {
+  top: 50%;
+  right: -4px;
+  transform: translateY(-50%);
+}
+
+.resize-handle.top {
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.resize-handle.bottom {
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.resize-handle.top-left {
+  top: -4px;
+  left: -4px;
+}
+
+.resize-handle.top-right {
+  top: -4px;
+  right: -4px;
+}
+
+.resize-handle.bottom-left {
+  bottom: -4px;
+  left: -4px;
+}
+
+.resize-handle.bottom-right {
+  bottom: -4px;
+  right: -4px;
+}

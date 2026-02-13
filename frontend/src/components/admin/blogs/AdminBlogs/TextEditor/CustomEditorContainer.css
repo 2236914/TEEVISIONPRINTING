@@ -1,0 +1,6 @@
+.custom-editor-container .ProseMirror {
+  /* Override ProseMirror styles here */
+  position: static;
+  border: 2px solid #e7e8e3;
+  border-radius: 0.375rem;
+}

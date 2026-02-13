@@ -1,0 +1,47 @@
+.product-tabs-mobile {
+  width: calc(140 * (100vw / 375));
+  height: calc(110 * (100vw / 768)); /* Proportionate height calculation */
+}
+
+.product-tabs-mobile__content {
+  /* box-shadow: 2px 15px 45px 0px rgba(0, 0, 0, 0.35); */
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.product-tabs-mobile__shadow {
+  /* box-shadow: 2px 15px 45px 0px rgba(0, 0, 0, 0.35); */
+  filter: drop-shadow(2px 15px 45px rgba(0, 0, 0, 0.35));
+}
+
+.product-tabs-mobile__trapezoid-parent {
+  filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.product-tabs-mobile__icon {
+  width: calc(60 * (100vw / 768));
+  height: calc(58 * (100vw / 768));
+}
+
+.product-tabs-mobile__first-trapezoid {
+  width: calc(300 * (100vw / 768));
+}
+
+.product-tabs-mobile__second-trapezoid {
+  width: calc(300 * (100vw / 768));
+}
+
+@media (min-width: 768px) {
+  .product-tabs-mobile {
+    height: calc(100 * (100vw / 768)); /* Proportionate height calculation */
+  }
+
+  .product-tabs-mobile__first-trapezoid {
+    width: calc(280 * (100vw / 768));
+  }
+
+  .product-tabs-mobile__second-trapezoid {
+    width: calc(280 * (100vw / 768));
+  }
+}

@@ -1,0 +1,18 @@
+.custom-textbox .ProseMirror-focused {
+  outline: none;
+}
+
+.custom-textbox {
+  word-break: break-word;
+}
+
+.custom-drag-handle {
+  position: absolute;
+  top: -10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffcd00;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

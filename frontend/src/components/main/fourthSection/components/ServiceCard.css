@@ -1,0 +1,31 @@
+.upload-service-card {
+  width: calc(365 * (100vw / 375));
+  aspect-ratio: 69/22;
+}
+
+.online-service-card {
+  width: calc(365 * (100vw / 375));
+  aspect-ratio: 345/175;
+}
+
+.in-house-service-card {
+  width: calc(365 * (100vw / 375));
+  aspect-ratio: 23/14;
+}
+
+@media screen and (min-width: 1025px) {
+  .upload-service-card {
+    width: 100%;
+    aspect-ratio: 821/214;
+  }
+
+  .online-service-card {
+    width: 100%;
+    aspect-ratio: 822/252;
+  }
+
+  .in-house-service-card {
+    width: 100%;
+    aspect-ratio: 822/252;
+  }
+}

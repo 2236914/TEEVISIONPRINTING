@@ -1,0 +1,33 @@
+.past-project-carousel {
+  .swiper {
+    width: calc(300 * (100vw / 375));
+    height: calc(600 * (100vw / 375));
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .swiper {
+      width: calc(600 * (100vw / 768));
+      height: calc(700 * (100vw / 768));
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .swiper {
+      width: 1100px;
+      height: 375px;
+    }
+  }
+
+  @media screen and (min-width: 1450px) {
+    .swiper {
+      width: 1250px;
+      height: 450px;
+    }
+  }
+}

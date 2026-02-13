@@ -1,0 +1,43 @@
+.admin-view-blogs-body {
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  ul,
+  ol {
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+}

@@ -1,0 +1,11 @@
+.second-section__product-card-img {
+  height: calc(150 * (100vw / 375));
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1280px) {
+  .second-section__product-card-img {
+    height: 16rem;
+    object-fit: cover;
+  }
+}

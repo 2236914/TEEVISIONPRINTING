@@ -1,0 +1,18 @@
+.perks-card-section__last-card-shape {
+  border-radius: 0 70px 0px 0; /* Rounded corners on the right */
+  clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 0% 100%);
+}
+
+.perks-card-section__last-card-shape:after {
+  content: ' ';
+  display: block;
+  width: 20px;
+  height: 40%;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transform: skew(-130deg);
+  /* border-radius: 8px; */
+  border-top-right-radius: 4px;
+  background-color: #1e1d1d;
+}

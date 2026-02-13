@@ -1,0 +1,125 @@
+.admin-view-blogs-body {
+  .is-active {
+    background: #ffcd00;
+  }
+
+  article h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding-bottom: 0.5rem;
+  }
+
+  article h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+  }
+
+  article h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  article h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 0.25rem;
+  }
+
+  article p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: 0.5rem;
+  }
+
+  article ul,
+  article ol {
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  article ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    font-weight: 300;
+  }
+
+  article ol {
+    list-style-type: decimal;
+    padding-left: 1.2rem;
+    font-weight: 300;
+  }
+
+  article ol li p {
+    padding-left: 0.25rem;
+  }
+
+  article span {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  /* Code and preformatted text styles */
+  article code {
+    background-color: #e7e8e3;
+    border-radius: 0.4rem;
+    color: #000000;
+    font-size: 0.95rem;
+    padding: 0.25em 0.3em;
+  }
+
+  article pre {
+    background: #e7e8e3;
+    border-radius: 0.5rem;
+    color: #000000;
+    margin: 1.5rem 0;
+    padding: 0.25rem 0.5rem;
+
+    article code {
+      background: none;
+      color: inherit;
+      font-size: 0.9rem;
+      padding: 0;
+    }
+  }
+
+  article blockquote {
+    border-left: 3px solid #ffcd00;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  article hr {
+    border: none;
+    border-top: 1px solid #e7e8e3;
+    margin: 1.5rem 0;
+  }
+
+  article a {
+    color: #007bff; /* Default link color */
+    text-decoration: underline; /* Underline links */
+    transition: color 0.2s ease-in-out; /* Smooth transition for hover effect */
+  }
+  article a.recent_post_blog,
+  article a.recent_post_blog:visited {
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  article a.recent_post_blog:hover {
+    color: #ffcd00;
+  }
+
+  article a:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: none; /* Remove underline on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+
+  article a:visited {
+    color: #6c757d; /* Different color for visited links */
+  }
+}

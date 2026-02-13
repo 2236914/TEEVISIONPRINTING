@@ -1,0 +1,1 @@
+ALTER TABLE quotes ADD COLUMN extra_small_quantity INT DEFAULT 0;

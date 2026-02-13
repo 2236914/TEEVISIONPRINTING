@@ -1,0 +1,33 @@
+.category-tab-medium {
+  width: calc(132 * (100vw / 375));
+  height: calc(96 * (100vw / 768)); /* Proportionate height calculation */
+}
+
+.category-tab-medium__content {
+  /* box-shadow: 2px 15px 45px 0px rgba(0, 0, 0, 0.35); */
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.category-tab-medium__shadow {
+  /* box-shadow: 2px 15px 45px 0px rgba(0, 0, 0, 0.35); */
+  filter: drop-shadow(2px 15px 45px rgba(0, 0, 0, 0.35));
+}
+
+.category-tab-medium__trapezoid-parent {
+  filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.1));
+}
+
+.category-tab-medium__icon {
+  width: calc(52 * (100vw / 768));
+  height: calc(50 * (100vw / 768));
+}
+
+.category-tab-medium__first-trapezoid {
+  width: calc(270 * (100vw / 768));
+}
+
+.category-tab-medium__second-trapezoid {
+  width: calc(270 * (100vw / 768));
+}

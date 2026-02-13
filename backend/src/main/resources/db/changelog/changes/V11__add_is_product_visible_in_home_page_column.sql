@@ -1,0 +1,1 @@
+ALTER TABLE products ADD COLUMN is_product_visible_in_home_page BOOLEAN NOT NULL DEFAULT false;

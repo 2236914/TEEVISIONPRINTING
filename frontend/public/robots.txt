@@ -1,0 +1,30 @@
+User-Agent: *
+Allow: /_next/
+Allow: /_next/image*
+Allow: /_next/static/
+Allow: /_next/webpack-hmr
+
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+Allow: /fonts/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+Allow: /favicon.ico
+Allow: /robots.txt
+
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /shopdetail/
+Allow: /sitemap.xml
+Sitemap: https://www.teevisionprinting.com/sitemap.xml
+
+

@@ -1,0 +1,86 @@
+[20:21:29.258] [INFO] storybook v10.2.7
+[20:21:30.623] [DEBUG] Getting package.json info for C:/Users/faith/OneDrive/Desktop/Teevision_Website/frontend/package.json...
+[20:21:30.629] [WARN] You are currently using Storybook [1m10.2.7[22m but you have packages which are incompatible with it:
+
+- @storybook/addon-essentials@8.6.14 which depends on 8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/addons/essentials
+- @storybook/addon-interactions@8.6.14 which depends on 8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/addons/interactions
+- @storybook/blocks@8.6.14 which depends on ^8.6.14
+ Repo: https://github.com/storybookjs/storybook/tree/next/code/lib/blocks
+
+Please consider updating your packages or contacting the maintainers for compatibility details.
+
+For more details on compatibility guidance, see:
+https://github.com/storybookjs/storybook/issues/32836
+[20:21:30.741] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0002 (CriticalPresetLoadError): Storybook failed to load the following preset: @storybook/nextjs/preset.
+
+Please check whether your setup is correct, the Storybook dependencies (and their peer dependencies) are installed correctly and there are no package version clashes.
+
+If you believe this is a bug, please open an issue on Github.
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@storybook/nextjs' imported from C:\Users\faith\AppData\Local\npm-cache\_npx\6fe9a9991b157df1\node_modules\storybook\dist\_node-chunks\chunk-IPKL7QI3.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:316:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:858:18)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at nextResolve (node:internal/modules/esm/hooks:785:28)
+    at AsyncLoaderHooksOnLoaderHookWorker.resolve (node:internal/modules/esm/hooks:269:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:251:24)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+
+More info: 
+[39m
+    at loadPreset (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-JBMAY2U2.js:10081:13)
+    at async Promise.all (index 0)
+    at async loadPresets (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-JBMAY2U2.js:10090:73)
+    at async getPresets (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-JBMAY2U2.js:10121:23)
+    at async buildDevStandalone (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/core-server/index.js:7532:17)
+    at async withTelemetry (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/_node-chunks/chunk-TQNBPEAH.js:218:12)
+    at async dev (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/bin/core.js:2734:3)
+    at async _Command.<anonymous> (file:///C:/Users/faith/AppData/Local/npm-cache/_npx/6fe9a9991b157df1/node_modules/storybook/dist/bin/core.js:2803:92)
+[20:21:30.749] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[20:21:30.786] [WARN]   Failed to load preset: {"name":"C:/Users/faith/OneDrive/Desktop/Teevision_Website/frontend/node_modules/@storybook/addon-essentials/dist/preset.js"} on level 2
+[20:21:30.787] [ERROR] [38;2;241;97;97mError: Cannot find module 'storybook/internal/common'
+Require stack:
+- .\node_modules\@storybook\addon-essentials\dist\preset.js[39m
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (.\node_modules\@storybook\addon-essentials\dist\preset.js:4:14)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+[20:21:30.793] [WARN]   Failed to load preset: {"name":"C:/Users/faith/OneDrive/Desktop/Teevision_Website/frontend/node_modules/@storybook/addon-onboarding/dist/preset.js"} on level 2
+[20:21:30.798] [ERROR] [38;2;241;97;97mError: Cannot find module 'storybook/internal/telemetry'
+Require stack:
+- .\node_modules\@storybook\addon-onboarding\dist\preset.js[39m
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (.\node_modules\@storybook\addon-onboarding\dist\preset.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+[20:21:30.803] [WARN]   Failed to load preset: {"name":"C:/Users/faith/OneDrive/Desktop/Teevision_Website/frontend/node_modules/@storybook/addon-interactions/dist/preset.js"} on level 2
+[20:21:30.807] [ERROR] [38;2;241;97;97mError: Cannot find module 'storybook/internal/common'
+Require stack:
+- .\node_modules\@storybook\addon-interactions\dist\preset.js[39m
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (.\node_modules\@storybook\addon-interactions\dist\preset.js:4:14)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)

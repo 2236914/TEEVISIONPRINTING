@@ -1,0 +1,5 @@
+ALTER TABLE brands
+ADD COLUMN sort_order VARCHAR(255) DEFAULT 'N/A';
+
+ALTER TABLE categories
+ADD COLUMN sort_order VARCHAR(255) DEFAULT 'N/A';

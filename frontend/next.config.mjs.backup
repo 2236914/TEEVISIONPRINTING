@@ -1,0 +1,26 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  // GitHub Pages deploys to /<repo-name>/ by default
+  // Set this to your repository name
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'teevision-bucket.s3.ap-southeast-2.amazonaws.com',
+        pathname: '/public/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
+  },
+  // Disable server-side features for static export
+  trailingSlash: true,
+};
+
+export default nextConfig;

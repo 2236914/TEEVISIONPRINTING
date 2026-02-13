@@ -1,0 +1,44 @@
+.dot {
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.dot.inactive {
+  width: 8px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.dot.active {
+  width: 40px;
+  border-radius: 1rem;
+  background-color: #ffcd00;
+}
+
+@media (min-width: 768px) {
+  .dot {
+    height: 15px;
+  }
+
+  .dot.inactive {
+    width: 15px;
+  }
+
+  .dot.active {
+    width: 70px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .dot {
+    height: 10px;
+  }
+
+  .dot.inactive {
+    width: 10px;
+  }
+
+  .dot.active {
+    width: 60px;
+  }
+}

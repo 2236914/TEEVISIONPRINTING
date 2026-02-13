@@ -1,0 +1,2 @@
+ALTER TABLE quotes 
+ALTER COLUMN artwork_image_url TYPE VARCHAR(255);

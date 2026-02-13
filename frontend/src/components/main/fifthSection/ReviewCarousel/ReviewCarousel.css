@@ -1,0 +1,59 @@
+.review_carousel {
+  .swiper {
+    width: 375px;
+    height: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .swiper {
+      width: calc(600 * 100vw / 768);
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .swiper {
+      width: 800px;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+
+  @media screen and (min-width: 1450px) {
+    .swiper {
+      width: 1000px;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+
+  @media screen and (min-width: 1536px) {
+    .swiper {
+      width: 1150px;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+}

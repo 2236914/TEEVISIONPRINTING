@@ -1,0 +1,107 @@
+.trapezoid-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.trapezoid-middle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+
+.trapezoid-corners {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100%;
+  width: 89.07%;
+}
+.trapezoid-corners:before {
+  content: ' ';
+  display: block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  transform: skew(-50deg);
+  /* border-radius: 8px; */
+  border-top-left-radius: 8px;
+  background-color: white;
+}
+.trapezoid-corners:after {
+  content: ' ';
+  display: block;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  transform: skew(50deg);
+  /* border-radius: 8px; */
+  border-top-right-radius: 8px;
+  background-color: white;
+}
+
+/* Small devices (sm) */
+/* @media (min-width: 640px) {
+
+} */
+
+/* Medium devices (md) */
+/* @media (min-width: 768px) {
+
+} */
+
+/* Large devices (lg) */
+/* @media (min-width: 1024px) {
+
+} */
+
+/* Extra large devices (xl) */
+@media (min-width: 1280px) {
+  .trapezoid-middle {
+    clip-path: polygon(13% 0%, 87% 0%, 100% 100%, 0% 100%);
+  }
+  .trapezoid-corners:before {
+    width: 40px;
+    left: -10px;
+    transform: skew(-50deg);
+    border-top-left-radius: 8px;
+  }
+  .trapezoid-corners:after {
+    width: 40px;
+    height: 100%;
+    right: -10px;
+    transform: skew(50deg);
+    border-top-right-radius: 8px;
+  }
+}
+
+/* 2XL devices (2xl) */
+@media (min-width: 1536px) {
+  .trapezoid-middle {
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  }
+  .trapezoid-corners:before {
+    width: 40px;
+    left: -10px;
+    transform: skew(-50deg);
+    border-top-left-radius: 8px;
+  }
+  .trapezoid-corners:after {
+    width: 40px;
+    height: 100%;
+    right: -10px;
+    transform: skew(50deg);
+    border-top-right-radius: 8px;
+  }
+}
