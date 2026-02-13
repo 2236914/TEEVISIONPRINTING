@@ -34,62 +34,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Create capture script
-        run: |
-          cat > capture-page.js << 'SCRIPT'
-          const puppeteer = require('puppeteer');
-          const fs = require('fs');
-          const path = require('path');
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
 
-          (async () => {
-            const outputDir = 'gh-pages-out';
-            fs.mkdirSync(outputDir, { recursive: true });
-
-            console.log('Launching browser...');
-            const browser = await puppeteer.launch({
-              headless: 'new',
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-
-            const page = await browser.newPage();
-            await page.setViewport({ width: 1920, height: 1080 });
-
-            console.log('Navigating to page...');
-            await page.goto('http://localhost:3000/screen-printing-philadelphia-v2', {
-              waitUntil: 'networkidle0',
-              timeout: 120000
-            });
-
-            // Wait for content
-            await new Promise(r => setTimeout(r, 5000));
-
-            console.log('Capturing HTML...');
-            const html = await page.content();
-            fs.writeFileSync(path.join(outputDir, 'index.html'), html);
-
-            console.log('Taking screenshot...');
-            await page.screenshot({ path: path.join(outputDir, 'preview.png'), fullPage: true });
-
-            await browser.close();
-            console.log('Page captured successfully!');
-          })();
-          SCRIPT
-
-      - name: Install Puppeteer
-        run: npm install puppeteer
-
-      - name: Start dev server
+      - name: Start dev server in background
         run: npm run dev &
 
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000 --timeout 180000
+      - name: Wait for dev server
+        run: |
+          echo "Waiting for Next.js dev server..."
+          timeout 180 bash -c 'until curl -s http://localhost:3000 > /dev/null 2>&1; do sleep 5; echo "Still waiting..."; done'
+          echo "Server is ready!"
 
-      - name: Capture page
-        run: node capture-page.js
+      - name: Create output directory
+        run: mkdir -p gh-pages-out
+
+      - name: Capture page screenshot
+        run: |
+          npx playwright screenshot \
+            --viewport-size=1920,1080 \
+            --full-page \
+            --wait-for-timeout=10000 \
+            "http://localhost:3000/screen-printing-philadelphia-v2" \
+            gh-pages-out/screenshot.png
+
+      - name: Capture page HTML
+        run: |
+          curl -L "http://localhost:3000/screen-printing-philadelphia-v2" -o gh-pages-out/index.html
 
       - name: Copy static assets
         run: |
           cp -r public/* gh-pages-out/ 2>/dev/null || true
+          # Copy Next.js static chunks
           if [ -d ".next/static" ]; then
             mkdir -p gh-pages-out/_next/static
             cp -r .next/static/* gh-pages-out/_next/static/ || true
