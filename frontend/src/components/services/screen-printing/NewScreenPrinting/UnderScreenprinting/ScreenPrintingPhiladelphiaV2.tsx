@@ -55,23 +55,27 @@ const MARQUEE_ITEMS_DATA = [
 const SHOWCASE_ITEMS = [
   {
     image: '/screen-printing/screen-printing-philadelphia/2.png',
-    title: 'LOCAL BREWERY',
-    subtitle: 'MERCHANDISE',
+    industry: 'SMALL BUSINESS',
+    city: 'FISHTOWN',
+    name: 'HAM & BONE',
   },
   {
     image: '/screen-printing/screen-printing-philadelphia/3.png',
-    title: 'LOCAL CAFES',
-    subtitle: 'BRAND BUILDING',
+    industry: 'SMALL BUSINESS',
+    city: 'CENTER CITY',
+    name: 'CUZZOS COFFEE CLUB',
   },
   {
     image: '/screen-printing/screen-printing-philadelphia/4.png',
-    title: 'LOCAL TRADES',
-    subtitle: 'TEAM UNIFORMS',
+    industry: 'SCHOOL',
+    city: 'JENKINTOWN',
+    name: 'MANOR COLLEGE',
   },
   {
     image: '/screen-printing/screen-printing-philadelphia/5.png',
-    title: 'LOCAL BREWERY',
-    subtitle: 'MERCHANDISE',
+    industry: 'NON PROFIT',
+    city: 'PHILADELPHIA',
+    name: 'SAVE THE DOGS',
   },
 ];
 
@@ -84,23 +88,84 @@ const PRODUCT_NAV_ITEMS = [
 ];
 
 const PHILLY_LOCATIONS = [
-  'Northern Liberties',
-  'Manayunk',
-  'Old City',
-  'Port Richmond',
-  'Center City',
-  'Fishtown',
-  'University City',
-  'South Philly',
+  {
+    label: 'Northern Liberties',
+    description: 'We work closely with creative studios, startups, and independent brands in Northern Liberties, providing custom screen printing that reflects bold ideas and modern design.'
+  },
+  {
+    label: 'Manayunk',
+    description: 'From retail shops to local events, Manayunk businesses rely on our custom screen printing Philadelphia services for stylish, durable apparel that represents their brand both in-store and out in the community.'
+  },
+  {
+    label: 'Old City',
+    description: 'Serving museums, tour companies, and gift shops, we create high-quality printed apparel and merchandise designed to capture Philadelphia’s history and character.'
+  },
+  {
+    label: 'Port Richmond',
+    description: 'Our screen printing services support industrial businesses, warehouses, and growing urban brands in Port Richmond, offering reliable solutions for uniforms and promotional apparel.'
+  },
+  {
+    label: 'Center City',
+    description: 'In the heart of Philadelphia, we provide professional screen printing for corporate offices, restaurants, hotels, and service businesses, ensuring clean, consistent branding across all apparel.'
+  },
+  {
+    label: 'Fishtown',
+    description: 'From popular breweries to retail shops and music venues, Fishtown clients trust us for custom apparel that matches the neighborhood’s creative energy and style.'
+  },
+  {
+    label: 'University City',
+    description: 'We proudly serve universities, student organizations, research groups, and campus events, delivering custom screen printing for clubs, staff, and promotional campaigns.'
+  },
+  {
+    label: 'South Philly',
+    description: 'Supporting sports teams, community organizations, restaurants, and local events, our South Philadelphia clients depend on us for durable, eye-catching custom apparel.'
+  },
 ];
 
+const MapPinIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </svg>
+);
+
+const LeafIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+  </svg>
+);
+
+const PriceTagIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+  </svg>
+);
+
+const ShieldCheckIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+  </svg>
+);
+
+const Clock24Icon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    <text x="12" y="16" fontSize="5" fontWeight="bold" textAnchor="middle" fill="currentColor" className="hidden">24</text>
+  </svg>
+);
+
+const TrainIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-6H6V6h5v5zm5.5 6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6h-5V6h5v5z"/>
+  </svg>
+);
+
 const WHY_CHOOSE_US_ITEMS = [
-  'Locally owned and operated in Philadelphia, PA',
-  'Premium inks and professional printing equipment',
-  'Competitive pricing for small and bulk orders',
-  'Clear, upfront quotes',
-  'Fast turnaround and rush screen',
-  'Printing and screen printing services when available',
+  { text: 'Locally owned and operated in Philadelphia, PA', Icon: MapPinIcon },
+  { text: 'Premium inks and professional printing equipment', Icon: LeafIcon },
+  { text: 'High-Quality, Affordable Screen Printing for Any Order Size. (Small or bulk orders)', Icon: PriceTagIcon },
+  { text: 'Clear, upfront quotes', Icon: ShieldCheckIcon },
+  { text: 'Fast turnaround and reliable Rush Screen Printing Services', Icon: Clock24Icon },
+  { text: 'Printing and screen printing services when available', Icon: TrainIcon },
 ];
 
 const CartIcon = () => (
@@ -494,6 +559,21 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 const ScreenPrintingPhiladelphiaV2 = () => {
   const [activeProductNav, setActiveProductNav] = useState('popular');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeLocation, setActiveLocation] = useState<number | null>(null);
+  const [activeProcessStep, setActiveProcessStep] = useState<number | null>(null);
+
+  useEffect(() => {
+    setActiveLocation(null);
+    setActiveProcessStep(null);
+  }, []);
+
+  const handleLocationClick = (index: number) => {
+    setActiveLocation(prev => (prev === index ? null : index));
+  };
+
+  const handleProcessStepClick = (index: number) => {
+    setActiveProcessStep(prev => (prev === index ? null : index));
+  };
 
   const marqueeItems = useMemo(() => 
     MARQUEE_ITEMS_DATA.map((item) => ({
@@ -548,45 +628,55 @@ const ScreenPrintingPhiladelphiaV2 = () => {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-6xl mx-auto">
+          <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-6xl mx-auto flex flex-col items-center">
             {/* Title */}
-            <h1 className="mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-              <span className={`${Termina} block text-[clamp(1.75rem,5vw,4.5rem)] font-black tracking-tight leading-[1.1]`}>
-                <span className="text-primaryT">SCREEN PRINTING</span>
-                <span className="text-white"> PHILADELPHIA</span>
+            <h1 className="mb-2 sm:mb-4">
+              <span className={`${Termina} block text-[clamp(1.75rem,5vw,5rem)] font-black tracking-tight leading-[1]`}>
+                <span className="text-primaryT block sm:inline">SCREEN PRINTING</span>{` `}
+                <span className="text-white block sm:inline sm:ml-4">PHILADELPHIA</span>
               </span>
             </h1>
             
+            {/* Subtitle */}
+            <h2 className={`${MaisonNeue} text-white font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6 max-w-4xl leading-tight`}>
+              Custom T-Shirt Printing for Businesses, Schools &amp; Events
+            </h2>
+            
             {/* Description */}
-            <div className="max-w-sm xs:max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-5 sm:mb-6 md:mb-8 lg:mb-10">
-              <p className={`${MaisonNeue} text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-2 sm:mb-3`}>
-                Trusted by more than 500 local restaurants, breweries, and organizations across Philadelphia, Tee Vision Printing leads the way in Screen Printing Philadelphia.
-              </p>
-              <p className={`${MaisonNeue} text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed`}>
-                We specialize in high-quality custom T-shirts, hoodies, tote bags, and staff uniforms, perfect for showcasing your brand or event. Enjoy same-day quotes, fast turnaround, and free local delivery from the city&apos;s most reliable screen printing experts in Philadelphia.
+            <div className="max-w-sm xs:max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12">
+              <p className={`${MaisonNeue} text-white text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed font-medium`}>
+                Professional Philadelphia screen printing for bulk custom T-shirts, hoodies, polos, and uniforms. Fast turnaround, competitive pricing, same-day quotes, and free local delivery.
               </p>
             </div>
 
-            <div className="flex justify-center">
+            {/* CTA */}
+            <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-full mb-16 sm:mb-20">
               <PrimaryRoundedIcon
                 icon={<PhoneIcon />}
                 isLink
-                link="tel:2672973266"
-                className="w-full xs:w-auto min-h-[44px] sm:min-h-0"
+                link="/request-a-quote"
+                className="w-full xs:w-auto min-h-[50px] sm:min-h-[60px] text-sm xs:text-base sm:text-lg px-8 sm:px-12 uppercase tracking-wide"
               >
-                <span className="hidden xs:inline">TALK TO A PRINT EXPERT</span>
-                <span className="xs:hidden">CALL AN EXPERT</span>
+                REQUEST A SCREEN PRINTING QUOTE
               </PrimaryRoundedIcon>
+              
+              {/* Trust Text */}
+              <div className={`${MaisonNeue} text-white/90 text-xs xs:text-sm sm:text-base space-y-1 font-medium`}>
+                 <p>Serving Center City, Fishtown, Northern Liberties, South Philly &amp; Beyond</p>
+                 <p className="text-white font-bold">Trusted by 500+ businesses and organizations</p>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* Yellow Marquee Bar */}
-        <AutoScrollMarquee 
-          items={marqueeItems} 
-          speed="medium" 
-          pauseOnHover={true}
-        />
+          {/* Yellow Marquee Bar */}
+          <div className="absolute bottom-0 left-0 w-full z-20">
+            <AutoScrollMarquee 
+              items={marqueeItems} 
+              speed="medium" 
+              pauseOnHover={true}
+            />
+          </div>
+        </section>
 
         {/* Features Bar - Using shared component */}
         <FeaturesBar variant="light" showBorder={true} />
@@ -628,12 +718,15 @@ const ScreenPrintingPhiladelphiaV2 = () => {
                     </div>
                   </div>
                   {/* Text */}
-                  <div className="text-center">
+                  <div className="text-center flex flex-col gap-0.5">
                     <h4 className={`${Termina} text-sm sm:text-base md:text-lg font-black text-black uppercase leading-tight`}>
-                      {item.title}
+                      {item.industry}
                     </h4>
                     <p className={`${MaisonNeue} text-xs sm:text-sm md:text-base text-primaryT font-bold uppercase`}>
-                      {item.subtitle}
+                      {item.city}
+                    </p>
+                    <p className={`${MaisonNeue} text-xs sm:text-sm md:text-base text-primaryT font-bold uppercase`}>
+                      {item.name}
                     </p>
                   </div>
                 </div>
@@ -729,10 +822,10 @@ const ScreenPrintingPhiladelphiaV2 = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 xs:mb-10 md:mb-12">
               <h2 className={`${Termina} text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight`}>
-                WHY CHOOSE OUR
+                WHY CHOOSE <span className="text-primaryT">TEE VISION PRINTING</span>
               </h2>
               <h3 className={`${Termina} text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight`}>
-                <span className="text-primaryT">PHILADELPHIA SCREEN PRINTING</span> COMPANY
+                AS YOUR PHILLY SCREEN PRINTER
               </h3>
               <p className={`${MaisonNeue} text-gray-600 text-xs xs:text-sm sm:text-base md:text-lg max-w-3xl mx-auto mt-3 xs:mt-4 px-2 sm:px-0`}>
                 Choosing the right printing partner makes all the difference. Our Philadelphia screen printing team focuses on quality, consistency, and customer satisfaction from start to finish.
@@ -754,11 +847,13 @@ const ScreenPrintingPhiladelphiaV2 = () => {
 
               {/* Right Side - Checklist */}
               <div className="space-y-4 md:space-y-5">
-                {WHY_CHOOSE_US_ITEMS.map((item, index) => (
+                {WHY_CHOOSE_US_ITEMS.map(({ text, Icon }, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckIcon />
-                    <p className={`${MaisonNeue} text-sm sm:text-base md:text-lg text-gray-700`}>
-                      {item}
+                    <div className="mt-1">
+                      <Icon />
+                    </div>
+                    <p className={`${MaisonNeue} text-sm sm:text-base md:text-lg text-black font-medium`}>
+                      {text}
                     </p>
                   </div>
                 ))}
@@ -780,31 +875,35 @@ const ScreenPrintingPhiladelphiaV2 = () => {
           </div>
 
           <div className="mb-6 xs:mb-8 md:mb-10">
-            {/* Mobile: Infinite scrolling marquee */}
-            <div className="md:hidden overflow-hidden">
-              <div 
-                className="flex gap-3 animate-marquee hover:[animation-play-state:paused]"
-                style={{ animationDuration: '20s' }}
-              >
-                {/* Duplicate items for seamless loop */}
-                {[...PHILLY_LOCATIONS, ...PHILLY_LOCATIONS].map((location, index) => (
-                  <div key={`location-${index}`} className="flex-shrink-0">
-                    <LocationPill
-                      label={location}
-                      href="/request-a-quote"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="hidden md:flex flex-wrap justify-center gap-3 md:gap-4 max-w-5xl mx-auto px-4">
-              {PHILLY_LOCATIONS.map((location, index) => (
-                <LocationPill
-                  key={index}
-                  label={location}
-                  href="/request-a-quote"
-                />
-              ))}
+            {/* Unified Scrollable List for Mobile and Desktop */}
+            <div className="flex flex-nowrap justify-start md:justify-center items-start gap-3 md:gap-4 max-w-full overflow-x-auto px-4 pb-8 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {PHILLY_LOCATIONS.map((location, index) => {
+                const isActive = activeLocation === index;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleLocationClick(index)}
+                    className={`
+                      ${MaisonNeue}
+                      flex flex-col items-center justify-center
+                      rounded-xl border-2 transition-all duration-300
+                      cursor-pointer overflow-hidden flex-shrink-0
+                      ${isActive 
+                        ? 'bg-primaryT border-primaryT text-black py-3 px-3 md:py-5 md:px-5 w-[260px] md:w-[300px] lg:w-[340px] min-h-[120px] md:min-h-[140px]' 
+                        : 'bg-transparent border-primaryT text-primaryT hover:bg-primaryT hover:text-black w-[90px] h-[90px] xs:w-[100px] xs:h-[100px] md:w-[115px] md:h-[115px] lg:w-[130px] lg:h-[130px]'
+                      }
+                    `}
+                  >
+                    <span className="font-bold uppercase tracking-wide text-[10px] xs:text-xs lg:text-sm text-center leading-tight">{location.label}</span>
+                    
+                    <div className={`transition-all duration-300 overflow-hidden w-full ${isActive ? 'max-h-[200px] mt-2 md:mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <p className="text-[10px] md:text-xs font-medium leading-relaxed whitespace-normal text-center">
+                        {location.description}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -1018,25 +1117,50 @@ const ScreenPrintingPhiladelphiaV2 = () => {
               </p>
             </div>
 
-            <div className="flex xl:grid xl:grid-cols-5 gap-4 md:gap-6 overflow-x-auto xl:overflow-visible snap-x snap-mandatory xl:snap-none pb-4 xl:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {PROCESS_STEPS.map((step, index) => (
-                <div key={index} className="min-w-[65%] xs:min-w-[48%] sm:min-w-[35%] md:min-w-[28%] xl:min-w-0 flex-shrink-0 xl:flex-shrink snap-start relative flex flex-col items-center">
-                  <div className="w-11 h-11 xs:w-12 xs:h-12 md:w-14 md:h-14 rounded-full bg-primaryT flex items-center justify-center mb-3 xs:mb-4 relative z-10 shrink-0">
-                    <span className={`${Termina} text-black font-bold text-lg md:text-xl`}>
+            <div className="flex flex-nowrap justify-start md:justify-center items-start gap-3 md:gap-4 max-w-full overflow-x-auto px-4 pb-8 pt-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {PROCESS_STEPS.map((step, index) => {
+                const isActive = activeProcessStep === index;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleProcessStepClick(index)}
+                    className={`
+                      ${MaisonNeue}
+                      flex flex-col items-center justify-center
+                      rounded-xl border-2 transition-all duration-300
+                      cursor-pointer  flex-shrink-0 relative
+                      ${isActive 
+                        ? 'bg-primaryT border-primaryT text-black py-4 px-4 md:py-6 md:px-6 w-[280px] md:w-[320px] lg:w-[360px] min-h-[140px] md:min-h-[160px]' 
+                        : 'bg-transparent border-primaryT text-white hover:bg-primaryT hover:text-black px-2 w-[120px] h-[120px] xs:w-[130px] xs:h-[130px] md:w-[150px] md:h-[150px] lg:w-[170px] lg:h-[170px]'
+                      }
+                    `}
+                  >
+                    {/* Floating Number Circle */}
+                    <div className={`
+                      absolute -top-4 left-1/2 -translate-x-1/2 
+                      w-8 h-8 md:w-10 md:h-10 rounded-full 
+                      flex items-center justify-center
+                      font-bold text-sm md:text-base transition-colors duration-300
+                      ${isActive 
+                        ? 'bg-black text-primaryT' 
+                        : 'bg-primaryT text-black'
+                      }
+                    `}>
                       {step.number}
-                    </span>
-                  </div>
-                  {/* Card */}
-                  <div className="w-full border-2 border-primaryT rounded-2xl p-4 md:p-5 text-center flex-grow flex flex-col">
-                    <h3 className={`${Termina} text-white text-xs sm:text-sm font-bold uppercase mb-2 md:mb-3`}>
+                    </div>
+
+                    <h3 className={`font-bold uppercase tracking-wide text-[10px] xs:text-xs lg:text-sm text-center leading-tight ${isActive ? 'mb-2 md:mb-3' : ''}`}>
                       {step.title}
                     </h3>
-                    <p className={`${MaisonNeue} text-white/70 text-xs sm:text-sm leading-relaxed`}>
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                    
+                    <div className={`transition-all duration-300 overflow-hidden w-full ${isActive ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <p className="text-[10px] md:text-xs font-medium leading-relaxed whitespace-normal text-center">
+                        {step.description}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </section>

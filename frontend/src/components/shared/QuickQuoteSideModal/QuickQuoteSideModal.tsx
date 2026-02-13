@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import MaisonNeue from '@/utilities/fonts/MaisonNeue/MaisonNeue';
 import Termina from '@/utilities/fonts/Termina/Termina';
 
@@ -23,7 +24,21 @@ const QuickQuoteSideModal: React.FC<QuickQuoteSideModalProps> = ({
   text = 'NEED A\nQUICK\nQUOTE?',
   scrollThreshold = 400,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Use a stable default position for SSR to avoid sticky hydration issues with usePathname in Layouts
+  // Then switch to correct position on client mount
+  const isSppV2 = mounted && pathname === '/screen-printing-philadelphia-v2';
+  
+  const positionClasses = isSppV2
+    ? 'bottom-36 right-0'
+    : 'top-1/2 -translate-y-1/2 right-0';
 
   useEffect(() => {
     const onScroll = () => setIsVisible(window.scrollY > scrollThreshold);
@@ -33,11 +48,7 @@ const QuickQuoteSideModal: React.FC<QuickQuoteSideModalProps> = ({
 
   return (
     <div
-      className={`
-        fixed right-0 top-1/2 -translate-y-1/2 z-40 cursor-pointer group
-        transition-all duration-300
-        ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}
-      `}
+      className={`fixed z-40 cursor-pointer group transition-all duration-300 ${positionClasses} ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}
     >
       <div className="bg-[#1a1a1a] rounded-l-2xl shadow-xl flex flex-col items-center w-[72px] md:w-[88px] py-4 px-2 gap-3 hover:scale-[1.03] transition-transform duration-200">
         {/* TVP Logo */}
